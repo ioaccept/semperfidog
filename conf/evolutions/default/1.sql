@@ -7,9 +7,7 @@ CREATE TABLE "Users" (
     "mentor" boolean
 );
 
-# --- !Downs
-
-drop table "Users";
+INSERT INTO "Users" values (1, 'ioaccept', '123', true);
 
 # Vert schema
 # --- !Ups
@@ -29,7 +27,3 @@ CREATE TABLE "Vert" (
     "stern" numeric(3),
     "gesamt" numeric(3)
 );
-
-# --- ! Downs
-
-drop table "Vert"
