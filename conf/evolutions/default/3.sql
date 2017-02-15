@@ -4,13 +4,13 @@
  
 CREATE TABLE Gott (
     gottId serial Primary Key,
-    userId numeric(3),
+    userId bigint(3),
     gott varchar(255),
     passiv boolean,
     erweckt boolean,
-    skill numeric(3),
-    skillE numeric(3),
-    gesamt numeric(3)
+    skill bigint(3),
+    skillE bigint(3),
+    gesamt bigint(3)
 );
 
 INSERT INTO Gott values (1, 1, 'Hades', true, true, 15, 2, 0);
