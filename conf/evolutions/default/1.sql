@@ -32,7 +32,7 @@ CREATE TABLE Vert (
     relikt numeric(3),
     stern numeric(3),
     gesamt numeric(3)
-;
+);
 
 INSERT INTO Vert values (1, 'ioaccept', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
