@@ -19,19 +19,19 @@ INSERT INTO Users values (1, 'ioaccept', '123', true);
 # --- !Ups
 
 CREATE TABLE Vert (
-    id numeric(3),
+    id number(3),
     name varchar(255) NOT NULL,
-    hturm numeric(3),
-    sturm numeric(3),
-    ragna numeric(3),
-    pturm numeric(3),
-    hand numeric(3),
-    wturm numeric(3),
-    balisten numeric(3),
-    antimagie numeric(3),
-    relikt numeric(3),
-    stern numeric(3),
-    gesamt numeric(3)
+    hturm number(3),
+    sturm number(3),
+    ragna number(3),
+    pturm number(3),
+    hand number(3),
+    wturm number(3),
+    balisten number(3),
+    antimagie number(3),
+    relikt number(3),
+    stern number(3),
+    gesamt number(3)
 );
 
 INSERT INTO Vert values (1, 'ioaccept', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
@@ -44,13 +44,13 @@ INSERT INTO Vert values (1, 'ioaccept', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 CREATE TABLE Gott (
     gottId serial Primary Key,
-    userId numeric(3),
+    userId number(3),
     gott varchar(255),
     passiv boolean,
     erweckt boolean,
-    skill numeric(3),
-    skillE numeric(3),
-    gesamt numeric(3)
+    skill number(3),
+    skillE number(3),
+    gesamt number(3)
 );
 
 INSERT INTO Gott values (1, 1, 'Hades', true, true, 15, 2, 0);
