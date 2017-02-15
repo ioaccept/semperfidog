@@ -3,8 +3,30 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
-GET     /db                         controllers.Application.db
+GET         /                    controllers.Application.index
+GET         /error               controllers.Application.error
+
+POST        /addUser             controllers.UserController.addUser
+POST        /delete              controllers.UserController.rmMember
+
+POST        /login               controllers.UserController.login
+GET         /login               controllers.UserController.loginUser
+GET         /logout              controllers.UserController.logout
+
+GET         /memberVerwaltung    controllers.UserController.loginUser
+
+GET         /Aufstellung         controllers.DefController.showDef
+GET         /showDef             controllers.DefController.showMemberDef(id)
+POST        /addDef              controllers.DefController.addDef
+
+POST        /change              controllers.DefController.changeDef
+
+
+POST        /changeGott          controllers.GottController.changeGott
+
+
+
+# REST API
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /assets/*file        controllers.Assets.at(path="/public", file)
