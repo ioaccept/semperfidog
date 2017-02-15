@@ -1,0 +1,11 @@
+@(verts: List[models.Defe], punkte: List[models.Punkte])
+
+@mainMember("Semper Fi") {
+    <div id="Aufstellung">
+    @for(punkt <- punkte) {
+        @punkt.name Gesamtpunkte @punkt.punkte
+        <br>
+        }
+    </div>
+}
+

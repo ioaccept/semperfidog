@@ -1,0 +1,38 @@
+@(users: List[models.User])
+
+@mainMentor("Semper Fi") {
+    @helper.form(action = routes.UserController.addUser) {
+        <div id="Register">
+            Member hinzufügen
+            <br>
+            Membername:
+            <br>
+            <input type="text" name="Name">
+            <br>
+            Passwort:
+            <br>
+            <input type="password" name="Password">
+            <br>
+            Mentor:
+            <br>
+            Ja: <input type="radio" name="Mentor" value="true">
+            Nein: <input type="radio" name="Mentor" value="false">
+            <br>
+            <input type="submit">
+        </div>
+    }
+    <div id="Delete">
+        Member löschen<br>
+    @helper.form(action = routes.UserController.rmMember) {
+            Name: <select name="Name">
+        @for(user <- users) {
+            <option>@user.name</option>
+        }
+    </select>
+        <input type="hidden" name="Password" value="123">
+        <input type="hidden" name="Mentor" value="true">
+        <br>
+        <input type="submit" value="Löschen">
+    }
+    </div>
+}

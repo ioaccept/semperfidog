@@ -1,0 +1,112 @@
+@(verts: List[models.Defe], gotts: List[models.Gott])
+
+@mainMember("Semper Fi") {
+    @for(vert <- verts) {
+        @helper.form(action = routes.DefController.changeDef) {
+            <div id="Verteidigung">
+                <table>
+                    <tr>
+                        <th>Höllentürme</th>
+                        <th>Schattentürme</th>
+                        <th>Ragnarök</th>
+                        <th>Prophetentürme</th>
+                        <th>Heilige Hände</th>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="hidden" value="@vert.id" name="id">
+                            <input type="hidden" value="@vert.name" name="name">
+                            <input id="vert" type="number" value="@vert.hturm" name="hturm" min="0" max="6">
+                        </td>
+                        <td>
+                            <input id="vert" type="number" value="@vert.sturm" name="sturm" min="0" max="36">
+                        </td>
+                        <td>
+                            <input id="vert" type="number" value="@vert.ragna" name="ragna" min="0" max="21">
+                        </td>
+                        <td>
+                            <input id="vert" type="number" value="@vert.pturm" name="pturm" min="0" max="40">
+                        </td>
+                        <td>
+                            <input id="vert" type="number" value="@vert.hand" name="hand" min="0" max="24">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Wachtürme</th>
+                        <th>Balisten</th>
+                        <th>Antimagie Kanonen</th>
+                        <th>Relikte</th>
+                        <th>Relikt Sterne</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="vert" type="number" value="@vert.wturm" name="wturm" min="0">
+                        </td>
+                        <td>
+                            <input id="vert" type="number" value="@vert.balisten" name="balisten" min="0">
+                        </td>
+                        <td>
+                            <input id="vert" type="number" value="@vert.antimagie" name="antimagie" min="0" max="40s">
+                        </td>
+                        <td>
+                            <input id="vert" type="number" value="@vert.relikt" name="relikt" min="0" max="9">
+                        </td>
+                        <td>
+                            <input id="vert" type="number" value="@vert.stern" name="stern" min="0" max="36">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Ändern">
+                <br>
+            </div>
+
+
+        }
+    }
+    <div id="Gott">
+        <table>
+            <tr>
+            @for(gott <- gotts) {
+                @helper.form(action = routes.GottController.changeGott) {
+                    <td>
+                        <input type="text" value="@gott.name" name="gott">
+                        <br>
+                        Passiv
+                        <br>
+                        @if(gott.passiv) {
+                            Ja<input type="radio" value="true" name="passiv" checked>
+                            Nein<input type="radio" value="false" name="passiv">
+                        } else {
+                            Ja<input type="radio" value="true" name="passiv">
+                            Nein<input type="radio" value="false" name="passiv" checked>
+                        }
+                        <br>
+                        Erweckt
+                        <br>
+                        @if(gott.erweckt) {
+                            Ja<input type="radio" value="true" name="erweckt" checked>
+                            Nein<input type="radio" value="false" name="erweckt">
+                        } else {
+                            Ja<input type="radio" value="true" name="erweckt">
+                            Nein<input type="radio" value="false" name="erweckt" checked>
+                        }
+                        <br>
+                        Skill
+                        <br>
+                        <input id="gott" type="number" value="@gott.skill" name="skill" min="0" max="15">
+                        <br>
+                        ErweckterSkill
+                        <br>
+                        <input id="gott" type="number" value="@gott.skillE" name="skillE" min="0" max="5">
+                        <br>
+                        <input type="submit" value="Ändern">
+
+                        }
+            </td>
+            }
+            </tr>
+        </table>
+    </div>
+}

@@ -1,0 +1,11 @@
+@(verts: List[models.Defe], punkte: List[models.Punkte])
+
+@mainMentor("Semper Fi") {
+    <div id="Aufstellung">
+    @for(punkt <- punkte) {
+        <a href="/showDef?id=@punkt.id">@punkt.name</a> Gesamtpunkte @punkt.punkte
+        <br>
+        }
+    </div>
+}
+
