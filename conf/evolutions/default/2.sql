@@ -3,7 +3,7 @@
 # --- !Ups
  
 CREATE TABLE Vert (
-    id number(3),
+    id numeric(3),
     name varchar(255) NOT NULL,
     hturm number(3),
     sturm number(3),
